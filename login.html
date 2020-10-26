@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 引入layui 的css样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 引入登录的css样式 -->
+    <link rel="stylesheet" href="/assets/css/login.css">
 </head>
+
 <body>
-    
+    <!-- logo 图 -->
+    <div class="layui-main">
+        <img src="/assets/images/logo.png" alt="" style="margin-top: 30px;">
+    </div>
+    <!-- 表单区域 -->
+    <div class="fatherForm">
+        <!-- 表单logo -->
+        <div class="title_logo"></div>
+        <!-- 登录信息 -->
+        <div class="form_login">
+            <!-- 登录表单 -->
+            <form class="layui-form" action="" id="loginForm">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username" style="font-size: 16px; color: #1E9FFF;"></i>  
+                    <input type="text" name="username" required lay-verify="required " placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password" style="font-size: 16px; color: #1E9FFF;"></i>  
+                    <input type="text" name="password" required lay-verify="required|pass" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+                </div>
+                <!-- 跳转注册 -->
+                <div class="layui-form-item links">
+                    <a href="JavaScript:;" id="toReg" >去注册账号</a>
+                </div>
+            </form>
+        </div>
+        <!-- 注册信息 -->
+        <div class="form_reg" style="display: none;">
+            <!-- 登录表单 -->
+            <form class="layui-form" action="" id="regForm">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username" style="font-size: 16px; color: #1E9FFF;"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password" style="font-size: 16px; color: #1E9FFF;"></i> 
+                    <input type="text" name="password" required lay-verify="required|pass" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 确认密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password" style="font-size: 16px; color: #1E9FFF;"></i> 
+                    <input type="text" name="repassword" required lay-verify="required|pass|repwd" placeholder="再次确认密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+                </div>
+                <!-- 跳转注册 -->
+                <div class="layui-form-item links">
+                    <a href="JavaScript:;" id="toLoad">去登录</a>
+                </div>
+            </form>
+            
+        </div>
+        
+    </div>
+    <!-- 引入layui的js -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 引入jq -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 引入自己的js -->
+    <script src="/assets/js/login.js"></script>
 </body>
+
 </html>
