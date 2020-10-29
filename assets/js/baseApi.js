@@ -20,7 +20,7 @@ $.ajaxPrefilter(function (para) {
     }
     //全局同一挂载complete 函数
     para.complete = function (res) {
-        console.log(res);
+        // console.log(res);
         if(res.responseJSON.status ===1 && res.responseJSON.message === '身份认证失败！'){
             // 强制清空 token ,跳转到登录页
             localStorage.removeItem('token')            
