@@ -40,8 +40,11 @@
 
             <!-- 第二行的按钮区域 -->
             <div class="row2">
-                <button type="button" class="layui-btn">上传</button>
-                <button type="button" class="layui-btn layui-btn-danger">确定</button>
+                <!-- 选中图片上传 -->
+                <!-- accept 属性只能与 <input type="file"> 配合使用。它规定能够通过文件上传进行提交的文件类型。 -->
+                <input type="file" hidden id="fileImg" accept="image/gif, image/jpeg,image/png, image/webp" >
+                <button type="button" id="chooseImg" class="layui-btn">上传</button>
+                <button type="button" id="btnUploadAvatar" class="layui-btn layui-btn-danger">确定</button>
             </div>
         </div>
     </div>

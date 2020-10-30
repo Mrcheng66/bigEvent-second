@@ -27,14 +27,14 @@ function getUserinfo() {
             }
             renderAvatar(res.data)
         },
-      /*   complete:function (res) {
-            console.log(res);
-            if(res.responseJSON.status ===1 && res.responseJSON.message === '身份认证失败！'){
-                // 强制清空 token ,跳转到登录页
-                localStorage.removeItem('token')            
-                location.href='/login.html'
-            }
-        } */
+    //    complete:function (res) {
+    //         console.log(res);
+    //         if(res.responseJSON.status ===1 && res.responseJSON.message === '身份认证失败！'){
+    //             // 强制清空 token ,跳转到登录页
+    //             localStorage.removeItem('token')            
+    //             location.href='/login.html'
+    //         }
+    //     } 
     })
 }
 // 渲染头像的函数
@@ -43,14 +43,15 @@ function renderAvatar (user) {
     var name = user.nickname || user.username;
     $('#welcome').html('欢迎&nbsp;&nbsp;'+name)
     // 渲染用户头像
-    if(user.user_pic) {
+    if(user.user_pic !== null) {
         //有头像
-        $('.layui-nav-img').show().attr('scr',user.user_pic)
+        $('.layui-nav-img').show().attr('src',user.user_pic)
         $('.user-avatar').hide()
     }else {
+        $('.layui-nav-img').hide()
         //没有头像
         var text = name[0].toUpperCase()
         $('.user-avatar').show().html(text)
-        $('.layui-nav-img').hide()
+        
     }
 }
