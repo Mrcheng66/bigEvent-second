@@ -110,8 +110,7 @@ $(function () {
                     initArticle()
                 }
             })
-           
           });
-       
     })
+    //编辑功能
 })
